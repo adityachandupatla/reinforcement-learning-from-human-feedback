@@ -1,0 +1,19 @@
+
+RLHF - Reinforcement learning with human feedback
+
+Generate more responses that humans prefer
+
+For a given input text we can have several summaries. Therefore it is hard to quantify the quality of a summary
+
+Therefore, instead of finding the best summary for a particular piece of input, we will take the input text, along with a bunch of summaries and then ask a human to choose one of those summaries (human preference) <- RLHF
+
+Preference dataset (obtained from above process) -- (supervised learning) -----> reward model --- (reinforcement learning training loop - uses PPO - proximal policy optimization) ----> base LLM
+
+Reward model:
+
+	input: (user input text, LLM completion)
+
+	output: a number indicating how good the completion is
+
+Use a reward model in an RL loop to fine tune the LLM
+
